@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>四川电力</title>
+  <script  src="./js/echarts.js"></script>
+  <script  type="text/javascript" src="./js/index.js"></script>
+</head>
+<body>
+  <!-- 第三部分 -->
+  <div class="two">
+    <div class="three_a">
+      <p>
+        2021年枯水期时段，水力发电占比为69.11%。也就是说，省内用电此刻高度依赖火力发电及省外购电，仍然面临电煤供应保障问题，水电大省的优势降低。
+那么，可不可以将夏天用不完的水储存起来，留在冬天用呢？
+由于四川的地理原因，我省具有可调节性的发电装机仅为四分之一，电站大多不是蓄水式、而是径流式，打个比喻，径流式好比"直肠子"，有多少水发多少电，本身不能调节水流大小。所以夏天的水没法大量储存起来冬天用。2021年，四川全口径发电量4519亿千瓦时，其中水电发电量就高达3724亿千瓦时。
+      </p>
+    </div>
+    <div class="three_c">
+      <div class="three_d" id="main_c" style="width: 500px;height:350px;"></div>
+      <div class="three_t"><p>
+        四川电网装机容量
+      </p></div>
+    </div>
+  </div>
+  <script>
+    var myChart = echarts.init(document.getElementById('main_c'));
+
+// 指定图表的配置项和数据
+option = {
+    series: [
+      {
+        type: 'pie',
+        data: [
+          {
+            value: 196,
+            name: '太阳能装机(1.17%)'
+          },
+          {
+            value: 527,
+            name: '风电装机(4.16%)'
+          },
+          {
+            value: 8887,
+            name: '水电装机(77.72%)'
+            },
+            {
+                value: 1829,
+                name: '其他(15.96%)'
+              }
+        ]
+      }
+    ]
+};
+ // 使用刚指定的配置项和数据显示图表。
+ myChart.setOption(option);
+  </script>
+</body>
+</html>

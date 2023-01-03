@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>四川电力</title>
+  <script  src="./js/echarts.js"></script>
+  <script  type="text/javascript" src="./js/index.js"></script>
+</head>
+<body>
+
+  <!-- 第四部分 -->
+  <div class="twot"><p>四川水电去哪儿了？</p></div>
+  <div class="two">
+    <div>
+      <div  id="main_q" style="width: 500px;height:350px;"></div>
+      <p class="pp">四川2021年6月﹣10月（丰水期）：</p>
+    </div>
+    <div>
+      <div id="main_w" style="width: 500px;height:350px;"></div>
+      <p class="pp">四川12021年12月﹣2022年4月（枯水期）：</p>
+    </div>
+    
+    <div class="qop">
+      <p>
+        水电有个特性，简单来说就是"夏丰冬枯"一一夏季丰水期因来水多，水电则可以"大发"(6月至10月）；冬季枯水期因来水少，水电则减发或者不发（12月至次年4月）。5月和11月则是平水期。
+据统计，2021年，四川水电发电量达3724亿千瓦时，而全社会用电量为3274.81亿千瓦时，这就说明，四川发出的水电，自己是用不完的，那就需要通过电网将其源源不断送到其他地方，简称"外送"。
+      </p>
+    </div>
+    <script>
+      
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main_q'));
+
+    // 指定图表的配置项和数据
+    option = {
+        series: [
+          {
+            type: 'pie',
+            data: [
+              {
+                value: 2212,
+                name: '水电发电量:2212亿千瓦'
+              },
+              {
+                value: 188.89,
+                name: '火电发电量:182.89亿千瓦'
+              },
+              {
+                value: 0.96,
+                name: '外购电量:0.96亿千瓦'
+              },
+              {
+                value: 978.16,
+                name: '外送电量:978.16亿千瓦'
+              }
+            ],
+            roseType: 'area'
+          }
+        ]
+      };
+     // 使用刚指定的配置项和数据显示图表。
+     myChart.setOption(option);
+
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main_w'));
+
+    // 指定图表的配置项和数据
+    option = {
+        xAxis: {
+          data: ['水电发电量', '火电发电量', '外购电量', '外送电量']
+        },
+        yAxis: {},
+        series: [
+          {
+            type: 'scatter',
+            data: [1129,422.43,64.32,341.98]
+          }
+        ]
+      };
+     // 使用刚指定的配置项和数据显示图表。
+     myChart.setOption(option);
+    </script>
+</body>
+</html>
